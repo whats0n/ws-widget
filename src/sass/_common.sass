@@ -1,0 +1,79 @@
+$white: #fff
+$black: #000
+
+html 
+	font-size: 12px
+
+body 
+	font-family: Helvetica, Arial, sans-serif
+	font-size: 1rem
+	line-height: 1.2
+
+.ws-items 
+	margin: 0 auto
+	max-width: 680px
+	&__row 
+		font-size: 0
+	&__col 
+		display: inline-block
+		vertical-align: top
+		padding: 10px
+		width: 33.33%
+
+.ws-item 
+	position: relative
+	display: block
+	padding: 2px
+	border-radius: 3px
+	color: $white
+	background-image: linear-gradient(to top, #3a4456 0%, #3e495e 29.3%, #45516f 60%, #3e495f 100%)
+	letter-spacing: 0.01em
+	text-align: center
+	text-decoration: none
+	&.is-active
+		color: $black
+		background-image: linear-gradient(to top, #618957 0%, #9cbc6c 29.3%, #9cbb71 100%)
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		border: 2px solid $white
+		border-radius: 3px
+		pointer-events: none
+	&__header
+		position: relative
+		padding: 5px 25px
+		text-align: center
+	&__icon
+		position: absolute
+		top: 5px
+		left: 10px
+		fill: $white
+		color: #3C465B
+		font-size: 1.2rem
+	&__title 
+		font-size: 1rem
+	&__price
+		padding: 3px 0 5px
+		font-size: 1.375rem
+		line-height: 1
+	&__label,
+	&__total
+		display: inline-block
+		vertical-align: top
+	&__label
+		padding: 5px 5px 1px 0
+		font-size: 0.775rem
+	&__total
+		font-size: 1.208rem
+	&__footer
+		padding-bottom: 3px
+		font-size: 0
+	&__goal,
+	&__rtg
+		display: inline-block
+		vertical-align: top
+		width: 50%

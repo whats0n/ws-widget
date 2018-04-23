@@ -1,0 +1,53 @@
+---
+title: 'Wireless Standard Widget'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<!-- begin ws-items -->
+	<div class="ws-items">
+		<div class="ws-items__row">
+			{% for item in [
+				{ icon: 'dollar', title: 'My incentives', price: '$500.00', total: '$1500.00' },
+				{ icon: 'user', title: 'Phones (EMP)', price: '34', goal: '50', rtg: '68.00%' },
+				{ icon: 'home', title: 'Accessory Revenue (EMP)', price: '$270.00', goal: '$500.00', rtg: '54.00%' },
+				{ icon: 'user', title: 'MRC + (EMP)', price: '$30.00', goal: '$45.00', rtg: '66.67%' },
+				{ icon: 'user', title: 'Conversion (EMP)', price: '7.00%', goal: '10.00%', rtg: '70.00%' },
+				{ icon: 'home', title: 'PPD (LOC)', price: '145', goal: '&nbsp;', rtg: '&nbsp;' }
+			] %}
+				<div class="ws-items__col">
+					<a href="#" class="ws-item {% if loop.first %}is-active{% endif %}">
+						<div class="ws-item__header">
+							{{mixins.icon(item.icon, 'ws-item__icon')}}
+							<div class="ws-item__title">{{item.title}}</div>
+						</div>
+						<div class="ws-item__price">{{item.price}}</div>
+						<div class="ws-item__footer">
+							{% if item.total %}
+								<div class="ws-item__total">
+									<div class="ws-item__label">Projected Incentives:</div>
+									<div class="ws-item__total">{{item.total}}</div>
+								</div>
+							{% endif %}
+							{% if item.goal %}
+								<div class="ws-item__goal">
+									<div class="ws-item__label">Goal:</div>
+									<div class="ws-item__total">{{item.goal | safe}}</div>
+								</div>
+							{% endif %}
+							{% if item.rtg %}
+								<div class="ws-item__rtg">
+									<div class="ws-item__label">RTG:</div>
+									<div class="ws-item__total">{{item.rtg | safe}}</div>
+								</div>
+							{% endif %}
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<!-- end ws-items -->
+
+{% endblock %}
